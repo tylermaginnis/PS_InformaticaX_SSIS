@@ -1,0 +1,13 @@
+C:\dev\PS_InformaticaX_SSIS\SSISWrapper\obj\Debug\net48\SSISWrapper.csproj.AssemblyReference.cache
+C:\dev\PS_InformaticaX_SSIS\SSISWrapper\obj\Debug\net48\SSISWrapper.GeneratedMSBuildEditorConfig.editorconfig
+C:\dev\PS_InformaticaX_SSIS\SSISWrapper\obj\Debug\net48\SSISWrapper.AssemblyInfoInputs.cache
+C:\dev\PS_InformaticaX_SSIS\SSISWrapper\obj\Debug\net48\SSISWrapper.AssemblyInfo.cs
+C:\dev\PS_InformaticaX_SSIS\SSISWrapper\obj\Debug\net48\SSISWrapper.csproj.CoreCompileInputs.cache
+C:\dev\PS_InformaticaX_SSIS\SSISWrapper\bin\Debug\net48\SSISWrapper.exe.config
+C:\dev\PS_InformaticaX_SSIS\SSISWrapper\bin\Debug\net48\SSISWrapper.exe
+C:\dev\PS_InformaticaX_SSIS\SSISWrapper\bin\Debug\net48\SSISWrapper.pdb
+C:\dev\PS_InformaticaX_SSIS\SSISWrapper\bin\Debug\net48\Microsoft.SqlServer.DTSPipelineWrap.dll
+C:\dev\PS_InformaticaX_SSIS\SSISWrapper\bin\Debug\net48\Microsoft.SqlServer.ManagedDTS.dll
+C:\dev\PS_InformaticaX_SSIS\SSISWrapper\obj\Debug\net48\SSISWrapper.csproj.CopyComplete
+C:\dev\PS_InformaticaX_SSIS\SSISWrapper\obj\Debug\net48\SSISWrapper.exe
+C:\dev\PS_InformaticaX_SSIS\SSISWrapper\obj\Debug\net48\SSISWrapper.pdb

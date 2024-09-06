@@ -1,0 +1,18 @@
+   <Project Sdk="Microsoft.NET.Sdk">
+     <PropertyGroup>
+       <OutputType>Exe</OutputType>
+       <TargetFramework>net48</TargetFramework>
+       <PlatformTarget>x86</PlatformTarget>
+     </PropertyGroup>
+
+     <ItemGroup>
+       <Reference Include="Microsoft.SqlServer.ManagedDTS">
+         <HintPath>C:\Windows\Microsoft.NET\assembly\GAC_MSIL\Microsoft.SqlServer.ManagedDTS\v4.0_11.0.0.0__89845dcd8080cc91\Microsoft.SqlServer.ManagedDTS.dll</HintPath>
+         <Private>true</Private>
+       </Reference>
+       <Reference Include="Microsoft.SqlServer.DTSPipelineWrap">
+         <HintPath>C:\Windows\Microsoft.NET\assembly\GAC_MSIL\Microsoft.SqlServer.DTSPipelineWrap\v4.0_11.0.0.0__89845dcd8080cc91\Microsoft.SqlServer.DTSPipelineWrap.dll</HintPath>
+         <Private>true</Private>
+       </Reference>
+     </ItemGroup>
+   </Project>
