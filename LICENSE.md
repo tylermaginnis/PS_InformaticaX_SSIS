@@ -22,3 +22,11 @@ This project is licensed under the NON-FREE, NON-COMMERCIAL, OPENSOURCE LICENSE.
 ### Disclaimer
 
 This software is provided "as is", without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose, and noninfringement. In no event shall the authors be liable for any claim, damages, or other liability, whether in an action of contract, tort, or otherwise, arising from, out of, or in connection with the software or the use or other dealings in the software.
+
+### Additional Disclaimer
+
+This software is a proof-of-concept for C# generation of SSIS files and a proof-of-concept for reading Informatica Datamart files. The nature of the implementation depends on the features you used in Informatica Datamart and require in SSIS.
+
+- This is an example implementation.
+- The reading of DTSX files works.
+- The writing of SSIS files works.
