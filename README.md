@@ -1,4 +1,4 @@
-# SSIS Package Management and Validation
+# SSIS Package Consreuctor Commandline, PowerShell Package Management and Validation
 
 This project provides tools for managing and validating SQL Server Integration Services (SSIS) packages. It includes scripts for converting PowerMart files to DTSX packages and validating DTSX files.
 
