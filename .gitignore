@@ -1,0 +1,70 @@
+# Ignore node_modules directory
+node_modules/
+
+# Ignore log files
+*.log
+
+# Ignore temporary files
+*.tmp
+*.temp
+
+# Ignore build directories
+build/
+dist/
+
+# Ignore compiled files
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# Ignore package directories
+*.egg-info/
+.eggs/
+
+# Ignore Python cache
+__pycache__/
+*.py[cod]
+
+# Ignore virtual environments
+venv/
+ENV/
+env.bak/
+env/
+
+# Ignore IDE specific files
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Ignore PowerShell specific files
+*.ps1xml
+*.psm1
+*.psd1
+
+
+# Ignore user-specific files
+*.DS_Store
+*.localized
+Thumbs.db
+*.bak
+*.swp
+*.swo
+
+# Ignore temporary files created by editors
+*~
+*.orig
+*.rej
+
+# Ignore coverage reports
+coverage/
+*.lcov
+
+# Ignore dependency directories
+Tools/InformaticaX_SSIS.ps1
+Tools/DTSXValidator.ps1

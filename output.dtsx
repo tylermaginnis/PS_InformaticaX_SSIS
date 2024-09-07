@@ -1,0 +1,110 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="9/6/2024 8:00:34 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-QHFRBJ5"
+  DTS:CreatorName="AzureAD\TylerMaginnis"
+  DTS:DTSID="{76B20120-F429-46AF-B30B-F3DF9CDCB8CD}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.5"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="{76B20120-F429-46AF-B30B-F3DF9CDCB8CD}"
+  DTS:VersionGUID="{AC24FA37-2CCE-4574-ABA1-04ED0ACBE3B6}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[MyOLEDBConnection]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{B1A06FAA-FD63-480A-A1C1-48EF0C3A1CCB}"
+      DTS:ObjectName="MyOLEDBConnection">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=(local);Initial Catalog=AdventureWorks;Provider=SQLOLEDB.1;Integrated Security=SSPI;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\{55F545B0-5404-4BAC-BCE5-AAD434B15E17\}"
+      DTS:CreationName="STOCK:Sequence"
+      DTS:DTSID="{55F545B0-5404-4BAC-BCE5-AAD434B15E17}"
+      DTS:ExecutableType="STOCK:Sequence"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="{55F545B0-5404-4BAC-BCE5-AAD434B15E17}">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\{55F545B0-5404-4BAC-BCE5-AAD434B15E17\}\{E8D42901-8B10-4800-895A-B29AFB4D4630\}"
+          DTS:CreationName="Microsoft.FileSystemTask"
+          DTS:DTSID="{E8D42901-8B10-4800-895A-B29AFB4D4630}"
+          DTS:ExecutableType="Microsoft.FileSystemTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="{E8D42901-8B10-4800-895A-B29AFB4D4630}"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData />
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\{75CFE905-089F-4EE6-BA1D-E5AB58C2651E\}"
+      DTS:CreationName="Microsoft.FileSystemTask"
+      DTS:DTSID="{75CFE905-089F-4EE6-BA1D-E5AB58C2651E}"
+      DTS:ExecutableType="Microsoft.FileSystemTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="{75CFE905-089F-4EE6-BA1D-E5AB58C2651E}"
+      DTS:ThreadHint="1">
+      <DTS:Variables />
+      <DTS:ObjectData />
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\{BD497F61-2EAE-46BA-8EA9-B37DE6CF547E\}"
+      DTS:CreationName="STOCK:ForEachLoop"
+      DTS:DTSID="{BD497F61-2EAE-46BA-8EA9-B37DE6CF547E}"
+      DTS:ExecutableType="STOCK:ForEachLoop"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="{BD497F61-2EAE-46BA-8EA9-B37DE6CF547E}">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\{BD497F61-2EAE-46BA-8EA9-B37DE6CF547E\}\{CA58B441-C5F8-40BB-A33B-0C1749A77A4D\}"
+          DTS:CreationName="Microsoft.FileSystemTask"
+          DTS:DTSID="{CA58B441-C5F8-40BB-A33B-0C1749A77A4D}"
+          DTS:ExecutableType="Microsoft.FileSystemTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="{CA58B441-C5F8-40BB-A33B-0C1749A77A4D}"
+          DTS:ThreadHint="2">
+          <DTS:Variables />
+          <DTS:ObjectData />
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\{DECA9188-4028-422A-8306-10C35D8ED65A\}"
+      DTS:CreationName="STOCK:ForLoop"
+      DTS:DTSID="{DECA9188-4028-422A-8306-10C35D8ED65A}"
+      DTS:EvalExpression=""
+      DTS:ExecutableType="STOCK:ForLoop"
+      DTS:LocaleID="-1"
+      DTS:MaxConcurrent="1"
+      DTS:ObjectName="{DECA9188-4028-422A-8306-10C35D8ED65A}">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\{DECA9188-4028-422A-8306-10C35D8ED65A\}\{2FDA941D-92BA-4CBF-930D-11C59DDE44FB\}"
+          DTS:CreationName="Microsoft.FileSystemTask"
+          DTS:DTSID="{2FDA941D-92BA-4CBF-930D-11C59DDE44FB}"
+          DTS:ExecutableType="Microsoft.FileSystemTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="{2FDA941D-92BA-4CBF-930D-11C59DDE44FB}"
+          DTS:ThreadHint="3">
+          <DTS:Variables />
+          <DTS:ObjectData />
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:Executable>
+  </DTS:Executables>
+</DTS:Executable>

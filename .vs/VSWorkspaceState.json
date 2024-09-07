@@ -1,0 +1,18 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\DTSX_Schema",
+    "\\Samples",
+    "\\Schematica",
+    "\\SSIS",
+    "\\SSISWrapper",
+    "\\SSISWrapper\\bin",
+    "\\SSISWrapper\\bin\\Debug",
+    "\\SSISWrapper\\bin\\Debug\\net48",
+    "\\SSISWrapper\\obj",
+    "\\SSISWrapper\\obj\\Debug",
+    "\\SSISWrapper\\obj\\Debug\\net48"
+  ],
+  "SelectedNode": "\\SSISWrapper",
+  "PreviewInSolutionExplorer": false
+}

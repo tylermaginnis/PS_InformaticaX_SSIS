@@ -33,91 +33,85 @@ This project contains PowerShell scripts to assist with the conversion of PowerM
 
 ## SSISWrapper
 
-**Adding an OLEDB Connection**
-
 ```bash
-SSISWrapper.exe --add-connection --type OLEDB --name MyConnection --connection-string "Provider=SQLNCLI11;Data Source=MyServer;Initial Catalog=MyDatabase;Integrated Security=SSPI;" --output "C:\path\to\output\package.dtsx"
+C:\dev\PS_InformaticaX_SSIS\SSISWrapper>dotnet run
+  Usage:
+  --add-connection --type <connectionType> --name <connectionName> --connection-string <connectionString> --output <outputPath> [--save-location <saveLocation>] [--server-name <serverName>] [--package-name <packageName>]
+  Supported connection types:
+          **OLEDB**
+          **ODBC**
+          **ADO**
+          **ADO.NET:SQL**
+          **ADO.NET:OLEDB**
+          **FLATFILE**
+          **MULTIFLATFILE**
+          **MULTIFILE**
+          **SQLMOBILE**
+          **MSOLAP100**
+          **FTP**
+          **HTTP**
+          **MSMQ**
+          **SMTP**
+          **WMI**
+  --add-task --task <taskType> --container <containerType> --output <outputPath> [--save-location <saveLocation>] [--server-name <serverName>] [--package-name <packageName>]
+  Supported task types:
+          **ActiveXScriptTask**
+          **BulkInsertTask**
+          **ExecuteProcessTask**
+          **ExecutePackageTask**
+          **Exec80PackageTask**
+          **FileSystemTask**
+          **FTPTask**
+          **MSMQTask**
+          **PipelineTask**
+          **ScriptTask**
+          **SendMailTask**
+          **SQLTask**
+          **TransferStoredProceduresTask**
+          **TransferLoginsTask**
+          **TransferErrorMessagesTask**
+          **TransferJobsTask**
+          **TransferObjectsTask**
+          **TransferDatabaseTask**
+          **WebServiceTask**
+          **WmiDataReaderTask**
+          **WmiEventWatcherTask**
+          **XMLTask**
+  --add-precedence-constraint --from-task <fromTaskName> --to-task <toTaskName> --constraint-type <constraintType> --expression <expression> --output <outputPath> [--save-location <saveLocation>] [--server-name <serverName>] [--package-name <packageName>]
+  Supported precedence constraint types:
+          **Success**
+          **Failure**
+          **Completion**
+          **Expression**
+          **ExpressionAndSuccess**
+          **ExpressionAndFailure**
+          **ExpressionAndCompletion**
+          **ExpressionOrSuccess**
+          **ExpressionOrFailure**
+          **ExpressionOrCompletion**
+  Examples of expressions:
+          1. **Simple Arithmetic**: @[User::Variable1] + @[User::Variable2]
+          2. **String Concatenation**: "Hello, " + @[User::Name]
+          3. **Conditional**: @[User::Age] > 18 ? "Adult" : "Minor"
+          4. **Date Functions**: DATEPART("Year", GETDATE())
+          5. **Logical AND/OR**: @[User::IsActive] == TRUE && @[User::IsVerified] == TRUE
+  --add-variable --name <variableName> --value <variableValue> --output <outputPath> [--save-location <saveLocation>] [--server-name <sRefine commandline for feature-completeness to SSIS DTSX File Building
+  erverName>] [--package-name <packageName>]
+  --enable-logging --provider <logProviderType> --log-file <logFilePath> --output <outputPath> [--save-location <saveLocation>] [--server-name <serverName>] [--package-name <packageName>]
+  Supported log provider types:
+          **DTS.LogProviderTextFile.2**
+          **DTS.LogProviderSQLServer.2**
+          **DTS.LogProviderEventLog.2**
+          **DTS.LogProviderXmlFile.2**
+  --add-data-flow-task --output <outputPath> [--save-location <saveLocation>] [--server-name <serverName>] [--package-name <packageName>]
+  --list-data-flow-components
+  Note: Data flow components need to be discovered before being added.
+  --add-data-flow-component --component <componentName> --connection <connectionName> --access-mode <accessMode> --sql-command <sqlCommand> --output <outputPath> [--save-location <saveLocation>] [--server-name <serverName>] [--package-name <packageName>]
+  AccessMode Enum Values:
+          **0 - OpenRowset**: The component will use a table or view.
+          **1 - OpenRowsetVariable**: The component will use a table or view name from a variable.
+          **2 - SqlCommand**: The component will use an SQL command.
+          **3 - SqlCommandVariable**: The component will use an SQL command from a variable.
+  --connect-data-flow-components --source <sourceComponentName> --destination <destinationComponentName> --output <outputPath> [--save-location <saveLocation>] [--server-name <serverName>] [--package-name <packageName>]
+  --select-input-columns --component <componentName> --output <outputPath> [--save-location <saveLocation>] [--server-name <serverName>] [--package-name <packageName>]
 ```
-
-**Adding an ODBC Connection**
-
-```bash
-SSISWrapper.exe --add-connection --type ODBC --name MyConnection --connection-string "DSN=MyODBCDataSource;UID=MyUser;PWD=MyPassword;" --output "C:\path\to\output\package.dtsx"
-```
-
-**Adding an ADO Connection**
-
-```bash
-dotnet run --add-connection --type ADO --name "MyADOConnection" --connection-string "Provider=SQLOLEDB.1;Integrated Security=SSPI;Initial Catalog=AdventureWorks;Data Source=(local);" --output "C:\dev\PS_InformaticaX_SSIS\output.dtsx"
-```
-
-**Adding an ADO.NET:SQL Connection**
-
-```bash
-dotnet run --add-connection --type "ADO.NET:SQL" --name "MyADONETSQLConnection" --connection-string "Data Source=(local);Initial Catalog=AdventureWorks;Integrated Security=True;" --output "C:\dev\PS_InformaticaX_SSIS\output.dtsx"
-```
-
-**Adding an ADO.NET:OLEDB Connection**
-
-```bash
-dotnet run --add-connection --type "ADO.NET:OLEDB" --name "MyADONETOLEDBConnection" --connection-string "Provider=SQLNCLI11;Data Source=MyServer;Initial Catalog=MyDatabase;Integrated Security=SSPI;" --output "C:\dev\PS_InformaticaX_SSIS\output.dtsx"
-```
-
-**Adding a Flat File Connection**
-
-```bash
-dotnet run --add-connection --type FLATFILE --name "MyFlatFileConnection" --connection-string "C:\\path\\to\\file.txt" --output "C:\dev\PS_InformaticaX_SSIS\output.dtsx"
-```
-
-**Adding a File Connection**
-
-```bash
-dotnet run --add-connection --type FLATFILE --name "MyFlatFileConnection" --connection-string "C:\\path\\to\\file.txt" --output "C:\dev\PS_InformaticaX_SSIS\output.dtsx"
-```
-
-**Adding a Multi Flat File Connection**
-
-```bash
-dotnet run --add-connection --type MULTIFLATFILE --name "MyMultiFlatFileConnection" --connection-string "C:\\path\\to\\files\\*.txt" --output "C:\dev\PS_InformaticaX_SSIS\output.dtsx"
-```
-
-**Adding a Multi File Connection**
-
-```bash
-dotnet run --add-connection --type MULTIFILE --name "MyMultiFileConnection" --connection-string "C:\\path\\to\\files\\*.txt" --output "C:\dev\PS_InformaticaX_SSIS\output.dtsx"
-```
-
-**Adding a SQL Mobile Connection**
-
-```bash
-dotnet run --add-connection --type SQLMOBILE --name "MySQLMobileConnection" --connection-string "Data Source=C:\\path\\to\\database.sdf" --output "C:\dev\PS_InformaticaX_SSIS\output.dtsx"
-```
-
-**Adding an Analysis Services Connection**
-
-```bash
-dotnet run --add-connection --type MSOLAP100 --name "MyAnalysisServicesConnection" --connection-string "Data Source=(local);Initial Catalog=AdventureWorks" --output "C:\dev\PS_InformaticaX_SSIS\output.dtsx"
-```
-
-**Adding an FTP Connection**
-
-```dotnet run --add-connection --type FTP --name "MyFTPConnection" --connection-string "Server=myftpserver;User=myuser;Password=mypassword" --output "C:\dev\PS_InformaticaX_SSIS\output.dtsx"
-```
-
-**Adding an HTTP Connection**
-
-```dotnet run --add-connection --type HTTP --name "MyHTTPConnection" --connection-string "URL=http://myserver;User=myuser;Password=mypassword" --output "C:\dev\PS_InformaticaX_SSIS\output.dtsx"```
-
-**Adding an MSMQ Connection**
-
-```dotnet run --add-connection --type MSMQ --name "MyMSMQConnection" --connection-string "FormatName:DIRECT=OS:myserver\\private$\\myqueue" --output "C:\dev\PS_InformaticaX_SSIS\output.dtsx"```
-
-**Adding an SMTP Connection**
-
-```bash
-dotnet run --add-connection --type SMTP --name "MySMTPConnection" --connection-string "Server=smtp.myserver.com;User=myuser;Password=mypassword" --output "C:\dev\PS_InformaticaX_SSIS\output.dtsx"```
-
-**Adding a WMI Connection**
-
-```bash
-dotnet run --add-connection --type WMI --name "MyWMIConnection" --connection-string "Server=\\myserver;Namespace=\\root\\cimv2" --output "C:\dev\PS_InformaticaX_SSIS\output.dtsx"```

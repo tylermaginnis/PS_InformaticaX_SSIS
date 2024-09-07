@@ -1,0 +1,23 @@
+TYLER MAGINNIS – Lead Software Developer
+202-948-8888
+maginnist@gmail.com
+https://github.com/tylermaginnis/
+
+<header>
+**COVER LETTER**
+</header>
+<coverletter>
+Dear Hiring Manager,
+
+My expertise in SSIS, PowerShell, and Informatica Datamart conversion makes me an excellent fit for this role.
+
+I am particularly proud of my work on the following GitHub repositories:
+
+- [PS_InformaticaX_SSIS](https://github.com/tylermaginnis/PS_InformaticaX_SSIS): A comprehensive project demonstrating the conversion of Informatica Datamart to SSIS using PowerShell scripting and C#. This project showcases my ability to ensure seamless data integration and transformation, automate workflows, and optimize performance.
+
+I am excited about the opportunity to develop innovative software solutions that positively impact legal professionals and their clients. Thank you for considering my application.
+
+Sincerely,
+
+Tyler Maginnis
+</coverletter>
