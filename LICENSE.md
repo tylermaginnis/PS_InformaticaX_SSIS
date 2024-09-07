@@ -28,5 +28,5 @@ This software is provided "as is", without warranty of any kind, express or impl
 This software is a proof-of-concept for C# generation of SSIS files and a proof-of-concept for reading Informatica Datamart files. The nature of the implementation depends on the features you used in Informatica Datamart and require in SSIS.
 
 - This is an example implementation.
-- The reading of DTSX files works.
-- The writing of SSIS files works.
+- The reading of Informatica Datamark files works.
+- The writing of SSIS DTSX files works.
