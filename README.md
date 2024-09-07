@@ -5,7 +5,14 @@ This project provides tools for managing and validating SQL Server Integration S
 ## Table of Contents
 
 - [Overview](#overview)
-- [Directory Structure](#directory-structure)
+- [SSISWrapper](#ssiswrapper)
+  - [Adding an OLEDB Connection](#adding-an-oledb-connection)
+  - [Adding an ODBC Connection](#adding-an-odbc-connection)
+  - [Adding an ADO Connection](#adding-an-ado-connection)
+  - [Adding an ADO.NET:SQL Connection](#adding-an-adonet-sql-connection)
+  - [Adding an ADO.NET:OLEDB Connection](#adding-an-adonet-oledb-connection)
+  - [Adding a Flat File Connection](#adding-a-flat-file-connection)
+  - [Adding a File Connection](#adding-a-file-connection)
 - [Scripts](#scripts)
   - [InformaticaX_SSIS.ps1](#informaticax_ssisps1)
   - [DTSXValidator.ps1](#dtsxvalidatorps1)
@@ -22,155 +29,95 @@ This project contains PowerShell scripts to assist with the conversion of PowerM
 
 - `InformaticaX_SSIS.ps1`: Converts PowerMart XML files to SSIS DTSX packages.
 - `DTSXValidator.ps1`: Validates the generated DTSX packages using `dtexec`.
+- `SSISWrapper`: A C# executable used within the `InformaticaX_SSIS.ps1` script to facilitate the conversion of PowerMart XML files to SSIS DTSX packages.
 
-## Directory Structure
+## SSISWrapper
 
-The directory structure of the project is as follows:
+**Adding an OLEDB Connection**
 
-```
-Ctrl+K to generate a command
-Write a comprehensive readme.md
-
-Sure, here's a comprehensive README.md for your project:
-project-root/
-├── scripts/
-│ ├── InformaticaX_SSIS.ps1
-│ ├── DTSXValidator.ps1
-├── examples/
-│ ├── example1.xml
-│ ├── example2.dtsx
-├── README.md
-└── config/
-├── settings.json
+```bash
+SSISWrapper.exe --add-connection --type OLEDB --name MyConnection --connection-string "Provider=SQLNCLI11;Data Source=MyServer;Initial Catalog=MyDatabase;Integrated Security=SSPI;" --output "C:\path\to\output\package.dtsx"
 ```
 
-## Scripts
+**Adding an ODBC Connection**
 
-### InformaticaX_SSIS.ps1
-
-This script converts PowerMart XML files to SSIS DTSX packages.
-
-**Usage:**
-
-```
-powershell
-.\InformaticaX_SSIS.ps1 -InputFile "path\to\input.xml" -OutputFile "path\to\output.dtsx"
+```bash
+SSISWrapper.exe --add-connection --type ODBC --name MyConnection --connection-string "DSN=MyODBCDataSource;UID=MyUser;PWD=MyPassword;" --output "C:\path\to\output\package.dtsx"
 ```
 
-**Parameters:**
-- `-InputFile`: Path to the PowerMart XML file.
-- `-OutputFile`: Path where the SSIS DTSX package will be saved.
+**Adding an ADO Connection**
 
-### DTSXValidator.ps1
-
-This script validates the generated DTSX packages using `dtexec`.
-
-**Usage:**
-
-```powershell
-.\DTSXValidator.ps1 -DTSXFile "path\to\package.dtsx"
+```bash
+dotnet run --add-connection --type ADO --name "MyADOConnection" --connection-string "Provider=SQLOLEDB.1;Integrated Security=SSPI;Initial Catalog=AdventureWorks;Data Source=(local);" --output "C:\dev\PS_InformaticaX_SSIS\output.dtsx"
 ```
 
-**Parameters:**
-- `-DTSXFile`: Path to the DTSX package file.
+**Adding an ADO.NET:SQL Connection**
 
-## Usage
-
-### Converting PowerMart Files
-
-To convert a PowerMart file to a DTSX package, run the `InformaticaX_SSIS.ps1` script with the appropriate parameters. For example:
-
-```powershell
-.\scripts\InformaticaX_SSIS.ps1 -InputFile "examples\example1.xml" -OutputFile "output\example1.dtsx"
+```bash
+dotnet run --add-connection --type "ADO.NET:SQL" --name "MyADONETSQLConnection" --connection-string "Data Source=(local);Initial Catalog=AdventureWorks;Integrated Security=True;" --output "C:\dev\PS_InformaticaX_SSIS\output.dtsx"
 ```
 
-### Validating DTSX Files
+**Adding an ADO.NET:OLEDB Connection**
 
-To validate a DTSX package, run the `DTSXValidator.ps1` script with the appropriate parameters. For example:
-
-```powershell
-.\scripts\DTSXValidator.ps1 -DTSXFile "examples\example2.dtsx"
+```bash
+dotnet run --add-connection --type "ADO.NET:OLEDB" --name "MyADONETOLEDBConnection" --connection-string "Provider=SQLNCLI11;Data Source=MyServer;Initial Catalog=MyDatabase;Integrated Security=SSPI;" --output "C:\dev\PS_InformaticaX_SSIS\output.dtsx"
 ```
 
-### SSISWrapper
+**Adding a Flat File Connection**
 
-The `SSISWrapper` is a C# executable used within the `InformaticaX_SSIS.ps1` script to facilitate the conversion of PowerMart XML files to SSIS DTSX packages. It takes various parameters such as package name, folder name, source and target connection strings, and generates a DTSX package based on these inputs.
+```bash
+dotnet run --add-connection --type FLATFILE --name "MyFlatFileConnection" --connection-string "C:\\path\\to\\file.txt" --output "C:\dev\PS_InformaticaX_SSIS\output.dtsx"
+```
 
-**Usage within PowerShell script:**
+**Adding a File Connection**
 
-The `SSISWrapper` is invoked by the `InformaticaX_SSIS.ps1` script with the following parameters:
-- `--create`: Indicates the creation of a new DTSX package.
-- `--name`: The name of the package.
-- `--folder`: The folder name where the package will be stored.
-- `--folder-description`: A description of the folder.
-- `--source`: The name of the source.
-- `--source-connection`: The connection string for the source.
-- `--target`: The name of the target.
-- `--target-connection`: The connection string for the target.
-- `--output`: The path where the generated DTSX package will be saved.
+```bash
+dotnet run --add-connection --type FLATFILE --name "MyFlatFileConnection" --connection-string "C:\\path\\to\\file.txt" --output "C:\dev\PS_InformaticaX_SSIS\output.dtsx"
+```
 
-The `SSISWrapper` executable processes these parameters and generates the corresponding DTSX package, which is then saved to the specified output path.
+**Adding a Multi Flat File Connection**
 
-**Example:**
+```bash
+dotnet run --add-connection --type MULTIFLATFILE --name "MyMultiFlatFileConnection" --connection-string "C:\\path\\to\\files\\*.txt" --output "C:\dev\PS_InformaticaX_SSIS\output.dtsx"
+```
 
-The `InformaticaX_SSIS.ps1` script uses the `SSISWrapper` as follows:
+**Adding a Multi File Connection**
 
+```bash
+dotnet run --add-connection --type MULTIFILE --name "MyMultiFileConnection" --connection-string "C:\\path\\to\\files\\*.txt" --output "C:\dev\PS_InformaticaX_SSIS\output.dtsx"
+```
 
-### Architecture of `InformaticaX_SSIS.ps1` and `SSISWrapper`
+**Adding a SQL Mobile Connection**
 
-The `InformaticaX_SSIS.ps1` script and the `SSISWrapper` executable work together to convert PowerMart XML files into SSIS DTSX packages. Below is an explanation of their architecture and the libraries they use.
+```bash
+dotnet run --add-connection --type SQLMOBILE --name "MySQLMobileConnection" --connection-string "Data Source=C:\\path\\to\\database.sdf" --output "C:\dev\PS_InformaticaX_SSIS\output.dtsx"
+```
 
-#### `InformaticaX_SSIS.ps1`
+**Adding an Analysis Services Connection**
 
-The `InformaticaX_SSIS.ps1` script is a PowerShell script that orchestrates the conversion process. It performs the following tasks:
+```bash
+dotnet run --add-connection --type MSOLAP100 --name "MyAnalysisServicesConnection" --connection-string "Data Source=(local);Initial Catalog=AdventureWorks" --output "C:\dev\PS_InformaticaX_SSIS\output.dtsx"
+```
 
-1. **Parameter Definition**: The script accepts two parameters: `samplesDir` (the directory containing PowerMart XML files) and `outputDir` (the directory where the generated DTSX files will be saved).
+**Adding an FTP Connection**
 
-2. **Convert-PowerMartToDtsx Function**: This function reads a PowerMart XML file, extracts necessary parameters, and invokes the `SSISWrapper` executable to perform the conversion. It uses the following PowerShell cmdlets and libraries:
-   - `Get-Content`: Reads the content of the XML file.
-   - `Where-Object` and `Select-Object`: Extract specific attributes from the XML.
-   - `New-Object System.Diagnostics.ProcessStartInfo`: Configures the process to run the `SSISWrapper` executable.
-   - `New-Object System.Diagnostics.Process`: Executes the `SSISWrapper` process and captures its output.
+```dotnet run --add-connection --type FTP --name "MyFTPConnection" --connection-string "Server=myftpserver;User=myuser;Password=mypassword" --output "C:\dev\PS_InformaticaX_SSIS\output.dtsx"
+```
 
-3. **Process-Directory Function**: This function ensures the output directory exists and processes each PowerMart XML file in the samples directory by calling the `Convert-PowerMartToDtsx` function.
+**Adding an HTTP Connection**
 
-4. **Execution**: The script executes the `Process-Directory` function with the provided parameters.
+```dotnet run --add-connection --type HTTP --name "MyHTTPConnection" --connection-string "URL=http://myserver;User=myuser;Password=mypassword" --output "C:\dev\PS_InformaticaX_SSIS\output.dtsx"```
 
-#### `SSISWrapper`
+**Adding an MSMQ Connection**
 
-The `SSISWrapper` is a C# executable that performs the actual conversion of PowerMart XML files to SSIS DTSX packages. It uses the following libraries and components:
+```dotnet run --add-connection --type MSMQ --name "MyMSMQConnection" --connection-string "FormatName:DIRECT=OS:myserver\\private$\\myqueue" --output "C:\dev\PS_InformaticaX_SSIS\output.dtsx"```
 
-1. **System.Xml**: This library is used to parse and manipulate XML data. It reads the PowerMart XML file and extracts the necessary information to create the DTSX package.
+**Adding an SMTP Connection**
 
-2. **Microsoft.SqlServer.Dts.Runtime**: This library is part of the SQL Server Integration Services (SSIS) API. It provides classes and methods to create and manipulate SSIS packages programmatically.
+```bash
+dotnet run --add-connection --type SMTP --name "MySMTPConnection" --connection-string "Server=smtp.myserver.com;User=myuser;Password=mypassword" --output "C:\dev\PS_InformaticaX_SSIS\output.dtsx"```
 
-3. **Command-Line Arguments**: The `SSISWrapper` accepts various command-line arguments to specify the package name, folder name, source and target connection strings, and the output path for the generated DTSX package.
+**Adding a WMI Connection**
 
-4. **Package Creation**: The `SSISWrapper` uses the extracted information and the SSIS API to create a new DTSX package. It sets the package properties, adds connection managers, and configures the data flow components based on the input parameters.
-
-5. **Output**: The generated DTSX package is saved to the specified output path.
-
-## License
-
-This project is licensed under the NON-FREE, NON-COMMERCIAL, OPENSOURCE LICENSE. 
-
-### Terms and Conditions
-
-1. **Non-Free**: This software is not free. You must obtain a valid license to use it.
-2. **Non-Commercial**: This software is provided for non-commercial use only. You may not use it for any commercial purposes.
-3. **Open Source**: The source code is available for viewing, modification, and distribution under the terms of this license.
-
-### Permissions
-
-- **Modification**: You are allowed to modify the source code.
-- **Distribution**: You are allowed to distribute the modified or unmodified source code, provided that it remains under the same license.
-
-### Restrictions
-
-- **Commercial Use**: You may not use this software for commercial purposes.
-- **Sublicensing**: You may not sublicense this software.
-- **Liability**: The authors are not liable for any damages arising from the use of this software.
-
-### Disclaimer
-
-This software is provided "as is", without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose, and noninfringement. In no event shall the authors be liable for any claim, damages, or other liability, whether in an action of contract, tort, or otherwise, arising from, out of, or in connection with the software or the use or other dealings in the software.
+```bash
+dotnet run --add-connection --type WMI --name "MyWMIConnection" --connection-string "Server=\\myserver;Namespace=\\root\\cimv2" --output "C:\dev\PS_InformaticaX_SSIS\output.dtsx"```
