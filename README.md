@@ -16,6 +16,7 @@ This project includes a unique command-line utility for managing and validating 
     - [PS_InformaticaX_OnPrem_ExportMapping.ps1](#ps_informaticax_onprem_exportmappingps1)
     - [PS_InformaticaX_Workflows.ps1](#ps_informaticax_workflowsps1)
     - [PS_InformaticaX_OnPrem_Workflows.ps1](#ps_informaticax_onprem_workflowsps1)
+    - [Support for Legacy Informatica DataMart Files](#support-for-legacy-informatica-datamart-files)
     - [Example Workflow](#example-workflow)
   - [Overview](#overview)
   - [SSISWrapper](#ssiswrapper)
