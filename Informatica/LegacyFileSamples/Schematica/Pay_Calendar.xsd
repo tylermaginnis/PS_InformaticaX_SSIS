@@ -1,0 +1,460 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="POWERMART">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="REPOSITORY">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="FOLDER">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="SOURCE">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element maxOccurs="unbounded" name="SOURCEFIELD">
+                                                        <xs:complexType>
+                                                            <xs:attribute name="BUSINESSNAME" type="xs:string" use="required" />
+                                                            <xs:attribute name="DATATYPE" type="xs:string" use="required" />
+                                                            <xs:attribute name="DESCRIPTION" type="xs:string" use="required" />
+                                                            <xs:attribute name="FIELDNUMBER" type="xs:unsignedByte" use="required" />
+                                                            <xs:attribute name="FIELDPROPERTY" type="xs:unsignedByte" use="required" />
+                                                            <xs:attribute name="FIELDTYPE" type="xs:string" use="required" />
+                                                            <xs:attribute name="HIDDEN" type="xs:string" use="required" />
+                                                            <xs:attribute name="KEYTYPE" type="xs:string" use="required" />
+                                                            <xs:attribute name="LENGTH" type="xs:unsignedByte" use="required" />
+                                                            <xs:attribute name="LEVEL" type="xs:unsignedByte" use="required" />
+                                                            <xs:attribute name="NAME" type="xs:string" use="required" />
+                                                            <xs:attribute name="NULLABLE" type="xs:string" use="required" />
+                                                            <xs:attribute name="OCCURS" type="xs:unsignedByte" use="required" />
+                                                            <xs:attribute name="OFFSET" type="xs:unsignedByte" use="required" />
+                                                            <xs:attribute name="PHYSICALLENGTH" type="xs:unsignedByte" use="required" />
+                                                            <xs:attribute name="PHYSICALOFFSET" type="xs:unsignedByte" use="required" />
+                                                            <xs:attribute name="PICTURETEXT" type="xs:string" use="required" />
+                                                            <xs:attribute name="PRECISION" type="xs:unsignedByte" use="required" />
+                                                            <xs:attribute name="SCALE" type="xs:unsignedByte" use="required" />
+                                                            <xs:attribute name="USAGE_FLAGS" type="xs:string" use="required" />
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                </xs:sequence>
+                                                <xs:attribute name="BUSINESSNAME" type="xs:string" use="required" />
+                                                <xs:attribute name="DATABASETYPE" type="xs:string" use="required" />
+                                                <xs:attribute name="DBDNAME" type="xs:string" use="required" />
+                                                <xs:attribute name="DESCRIPTION" type="xs:string" use="required" />
+                                                <xs:attribute name="NAME" type="xs:string" use="required" />
+                                                <xs:attribute name="OBJECTVERSION" type="xs:unsignedByte" use="required" />
+                                                <xs:attribute name="OWNERNAME" type="xs:string" use="required" />
+                                                <xs:attribute name="VERSIONNUMBER" type="xs:unsignedByte" use="required" />
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element maxOccurs="unbounded" name="TARGET">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element minOccurs="0" name="FLATFILE">
+                                                        <xs:complexType>
+                                                            <xs:attribute name="CODEPAGE" type="xs:string" use="required" />
+                                                            <xs:attribute name="CONSECDELIMITERSASONE" type="xs:string" use="required" />
+                                                            <xs:attribute name="DELIMITED" type="xs:string" use="required" />
+                                                            <xs:attribute name="DELIMITERS" type="xs:string" use="required" />
+                                                            <xs:attribute name="ESCAPE_CHARACTER" type="xs:string" use="required" />
+                                                            <xs:attribute name="KEEPESCAPECHAR" type="xs:string" use="required" />
+                                                            <xs:attribute name="LINESEQUENTIAL" type="xs:string" use="required" />
+                                                            <xs:attribute name="MULTIDELIMITERSASAND" type="xs:string" use="required" />
+                                                            <xs:attribute name="NULLCHARTYPE" type="xs:string" use="required" />
+                                                            <xs:attribute name="NULL_CHARACTER" type="xs:string" use="required" />
+                                                            <xs:attribute name="PADBYTES" type="xs:unsignedByte" use="required" />
+                                                            <xs:attribute name="QUOTE_CHARACTER" type="xs:string" use="required" />
+                                                            <xs:attribute name="REPEATABLE" type="xs:string" use="required" />
+                                                            <xs:attribute name="ROWDELIMITER" type="xs:unsignedByte" use="required" />
+                                                            <xs:attribute name="SKIPROWS" type="xs:unsignedByte" use="required" />
+                                                            <xs:attribute name="STRIPTRAILINGBLANKS" type="xs:string" use="required" />
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                    <xs:element maxOccurs="unbounded" name="TARGETFIELD">
+                                                        <xs:complexType>
+                                                            <xs:attribute name="BUSINESSNAME" type="xs:string" use="required" />
+                                                            <xs:attribute name="DATATYPE" type="xs:string" use="required" />
+                                                            <xs:attribute name="DESCRIPTION" type="xs:string" use="required" />
+                                                            <xs:attribute name="FIELDNUMBER" type="xs:unsignedByte" use="required" />
+                                                            <xs:attribute name="KEYTYPE" type="xs:string" use="required" />
+                                                            <xs:attribute name="NAME" type="xs:string" use="required" />
+                                                            <xs:attribute name="NULLABLE" type="xs:string" use="required" />
+                                                            <xs:attribute name="PICTURETEXT" type="xs:string" use="required" />
+                                                            <xs:attribute name="PRECISION" type="xs:unsignedShort" use="required" />
+                                                            <xs:attribute name="SCALE" type="xs:unsignedByte" use="required" />
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                    <xs:element minOccurs="0" maxOccurs="unbounded" name="TABLEATTRIBUTE">
+                                                        <xs:complexType>
+                                                            <xs:attribute name="NAME" type="xs:string" use="required" />
+                                                            <xs:attribute name="VALUE" type="xs:string" use="required" />
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                </xs:sequence>
+                                                <xs:attribute name="BUSINESSNAME" type="xs:string" use="required" />
+                                                <xs:attribute name="CONSTRAINT" type="xs:string" use="required" />
+                                                <xs:attribute name="DATABASETYPE" type="xs:string" use="required" />
+                                                <xs:attribute name="DESCRIPTION" type="xs:string" use="required" />
+                                                <xs:attribute name="NAME" type="xs:string" use="required" />
+                                                <xs:attribute name="OBJECTVERSION" type="xs:unsignedByte" use="required" />
+                                                <xs:attribute name="TABLEOPTIONS" type="xs:string" use="required" />
+                                                <xs:attribute name="VERSIONNUMBER" type="xs:unsignedByte" use="required" />
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element maxOccurs="unbounded" name="MAPPING">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element maxOccurs="unbounded" name="TRANSFORMATION">
+                                                        <xs:complexType>
+                                                            <xs:sequence>
+                                                                <xs:element minOccurs="0" maxOccurs="unbounded" name="GROUP">
+                                                                    <xs:complexType>
+                                                                        <xs:attribute name="DESCRIPTION" type="xs:string" use="required" />
+                                                                        <xs:attribute name="NAME" type="xs:string" use="required" />
+                                                                        <xs:attribute name="ORDER" type="xs:unsignedByte" use="required" />
+                                                                        <xs:attribute name="TYPE" type="xs:string" use="required" />
+                                                                        <xs:attribute name="EXPRESSION" type="xs:string" use="optional" />
+                                                                    </xs:complexType>
+                                                                </xs:element>
+                                                                <xs:element maxOccurs="unbounded" name="TRANSFORMFIELD">
+                                                                    <xs:complexType>
+                                                                        <xs:attribute name="DATATYPE" type="xs:string" use="required" />
+                                                                        <xs:attribute name="DEFAULTVALUE" type="xs:string" use="required" />
+                                                                        <xs:attribute name="DESCRIPTION" type="xs:string" use="required" />
+                                                                        <xs:attribute name="NAME" type="xs:string" use="required" />
+                                                                        <xs:attribute name="PICTURETEXT" type="xs:string" use="required" />
+                                                                        <xs:attribute name="PORTTYPE" type="xs:string" use="required" />
+                                                                        <xs:attribute name="PRECISION" type="xs:unsignedShort" use="required" />
+                                                                        <xs:attribute name="SCALE" type="xs:unsignedByte" use="required" />
+                                                                        <xs:attribute name="EXPRESSION" type="xs:string" use="optional" />
+                                                                        <xs:attribute name="EXPRESSIONTYPE" type="xs:string" use="optional" />
+                                                                        <xs:attribute name="GROUP" type="xs:string" use="optional" />
+                                                                        <xs:attribute name="REF_FIELD" type="xs:string" use="optional" />
+                                                                    </xs:complexType>
+                                                                </xs:element>
+                                                                <xs:element maxOccurs="unbounded" name="TABLEATTRIBUTE">
+                                                                    <xs:complexType>
+                                                                        <xs:attribute name="NAME" type="xs:string" use="required" />
+                                                                        <xs:attribute name="VALUE" type="xs:string" use="required" />
+                                                                    </xs:complexType>
+                                                                </xs:element>
+                                                            </xs:sequence>
+                                                            <xs:attribute name="DESCRIPTION" type="xs:string" use="required" />
+                                                            <xs:attribute name="NAME" type="xs:string" use="required" />
+                                                            <xs:attribute name="OBJECTVERSION" type="xs:unsignedByte" use="required" />
+                                                            <xs:attribute name="REUSABLE" type="xs:string" use="required" />
+                                                            <xs:attribute name="TYPE" type="xs:string" use="required" />
+                                                            <xs:attribute name="VERSIONNUMBER" type="xs:unsignedByte" use="required" />
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                    <xs:element maxOccurs="unbounded" name="INSTANCE">
+                                                        <xs:complexType>
+                                                            <xs:sequence minOccurs="0">
+                                                                <xs:element name="ASSOCIATED_SOURCE_INSTANCE">
+                                                                    <xs:complexType>
+                                                                        <xs:attribute name="NAME" type="xs:string" use="required" />
+                                                                    </xs:complexType>
+                                                                </xs:element>
+                                                            </xs:sequence>
+                                                            <xs:attribute name="DESCRIPTION" type="xs:string" use="required" />
+                                                            <xs:attribute name="NAME" type="xs:string" use="required" />
+                                                            <xs:attribute name="TRANSFORMATION_NAME" type="xs:string" use="required" />
+                                                            <xs:attribute name="TRANSFORMATION_TYPE" type="xs:string" use="required" />
+                                                            <xs:attribute name="TYPE" type="xs:string" use="required" />
+                                                            <xs:attribute name="DBDNAME" type="xs:string" use="optional" />
+                                                            <xs:attribute name="REUSABLE" type="xs:string" use="optional" />
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                    <xs:element maxOccurs="unbounded" name="CONNECTOR">
+                                                        <xs:complexType>
+                                                            <xs:attribute name="FROMFIELD" type="xs:string" use="required" />
+                                                            <xs:attribute name="FROMINSTANCE" type="xs:string" use="required" />
+                                                            <xs:attribute name="FROMINSTANCETYPE" type="xs:string" use="required" />
+                                                            <xs:attribute name="TOFIELD" type="xs:string" use="required" />
+                                                            <xs:attribute name="TOINSTANCE" type="xs:string" use="required" />
+                                                            <xs:attribute name="TOINSTANCETYPE" type="xs:string" use="required" />
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                    <xs:element maxOccurs="unbounded" name="TARGETLOADORDER">
+                                                        <xs:complexType>
+                                                            <xs:attribute name="ORDER" type="xs:unsignedByte" use="required" />
+                                                            <xs:attribute name="TARGETINSTANCE" type="xs:string" use="required" />
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                    <xs:element minOccurs="0" maxOccurs="unbounded" name="MAPPINGVARIABLE">
+                                                        <xs:complexType>
+                                                            <xs:attribute name="DATATYPE" type="xs:string" use="required" />
+                                                            <xs:attribute name="DEFAULTVALUE" type="xs:string" use="required" />
+                                                            <xs:attribute name="DESCRIPTION" type="xs:string" use="required" />
+                                                            <xs:attribute name="ISEXPRESSIONVARIABLE" type="xs:string" use="required" />
+                                                            <xs:attribute name="ISPARAM" type="xs:string" use="required" />
+                                                            <xs:attribute name="NAME" type="xs:string" use="required" />
+                                                            <xs:attribute name="PRECISION" type="xs:unsignedShort" use="required" />
+                                                            <xs:attribute name="SCALE" type="xs:unsignedByte" use="required" />
+                                                            <xs:attribute name="USERDEFINED" type="xs:string" use="required" />
+                                                            <xs:attribute name="AGGFUNCTION" type="xs:string" use="optional" />
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                    <xs:element name="ERPINFO" />
+                                                </xs:sequence>
+                                                <xs:attribute name="DESCRIPTION" type="xs:string" use="required" />
+                                                <xs:attribute name="ISVALID" type="xs:string" use="required" />
+                                                <xs:attribute name="NAME" type="xs:string" use="required" />
+                                                <xs:attribute name="OBJECTVERSION" type="xs:unsignedByte" use="required" />
+                                                <xs:attribute name="VERSIONNUMBER" type="xs:unsignedByte" use="required" />
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element name="CONFIG">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element maxOccurs="unbounded" name="ATTRIBUTE">
+                                                        <xs:complexType>
+                                                            <xs:attribute name="NAME" type="xs:string" use="required" />
+                                                            <xs:attribute name="VALUE" type="xs:string" use="required" />
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                </xs:sequence>
+                                                <xs:attribute name="DESCRIPTION" type="xs:string" use="required" />
+                                                <xs:attribute name="ISDEFAULT" type="xs:string" use="required" />
+                                                <xs:attribute name="NAME" type="xs:string" use="required" />
+                                                <xs:attribute name="VERSIONNUMBER" type="xs:unsignedByte" use="required" />
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element name="WORKFLOW">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="SCHEDULER">
+                                                        <xs:complexType>
+                                                            <xs:sequence>
+                                                                <xs:element name="SCHEDULEINFO">
+                                                                    <xs:complexType>
+                                                                        <xs:attribute name="SCHEDULETYPE" type="xs:string" use="required" />
+                                                                    </xs:complexType>
+                                                                </xs:element>
+                                                            </xs:sequence>
+                                                            <xs:attribute name="DESCRIPTION" type="xs:string" use="required" />
+                                                            <xs:attribute name="NAME" type="xs:string" use="required" />
+                                                            <xs:attribute name="REUSABLE" type="xs:string" use="required" />
+                                                            <xs:attribute name="VERSIONNUMBER" type="xs:unsignedByte" use="required" />
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                    <xs:element maxOccurs="unbounded" name="TASK">
+                                                        <xs:complexType>
+                                                            <xs:sequence minOccurs="0">
+                                                                <xs:element maxOccurs="unbounded" name="ATTRIBUTE">
+                                                                    <xs:complexType>
+                                                                        <xs:attribute name="NAME" type="xs:string" use="required" />
+                                                                        <xs:attribute name="VALUE" type="xs:string" use="required" />
+                                                                    </xs:complexType>
+                                                                </xs:element>
+                                                            </xs:sequence>
+                                                            <xs:attribute name="DESCRIPTION" type="xs:string" use="required" />
+                                                            <xs:attribute name="NAME" type="xs:string" use="required" />
+                                                            <xs:attribute name="REUSABLE" type="xs:string" use="required" />
+                                                            <xs:attribute name="TYPE" type="xs:string" use="required" />
+                                                            <xs:attribute name="VERSIONNUMBER" type="xs:unsignedByte" use="required" />
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                    <xs:element maxOccurs="unbounded" name="SESSION">
+                                                        <xs:complexType>
+                                                            <xs:sequence>
+                                                                <xs:element maxOccurs="unbounded" name="SESSTRANSFORMATIONINST">
+                                                                    <xs:complexType>
+                                                                        <xs:sequence minOccurs="0">
+                                                                            <xs:element minOccurs="0" name="FLATFILE">
+                                                                                <xs:complexType>
+                                                                                    <xs:attribute name="CODEPAGE" type="xs:string" use="required" />
+                                                                                    <xs:attribute name="CONSECDELIMITERSASONE" type="xs:string" use="required" />
+                                                                                    <xs:attribute name="DELIMITED" type="xs:string" use="required" />
+                                                                                    <xs:attribute name="DELIMITERS" type="xs:string" use="required" />
+                                                                                    <xs:attribute name="ESCAPE_CHARACTER" type="xs:string" use="required" />
+                                                                                    <xs:attribute name="KEEPESCAPECHAR" type="xs:string" use="required" />
+                                                                                    <xs:attribute name="LINESEQUENTIAL" type="xs:string" use="required" />
+                                                                                    <xs:attribute name="MULTIDELIMITERSASAND" type="xs:string" use="required" />
+                                                                                    <xs:attribute name="NULLCHARTYPE" type="xs:string" use="required" />
+                                                                                    <xs:attribute name="NULL_CHARACTER" type="xs:string" use="required" />
+                                                                                    <xs:attribute name="PADBYTES" type="xs:unsignedByte" use="required" />
+                                                                                    <xs:attribute name="QUOTE_CHARACTER" type="xs:string" use="required" />
+                                                                                    <xs:attribute name="REPEATABLE" type="xs:string" use="required" />
+                                                                                    <xs:attribute name="ROWDELIMITER" type="xs:unsignedByte" use="required" />
+                                                                                    <xs:attribute name="SKIPROWS" type="xs:unsignedByte" use="required" />
+                                                                                    <xs:attribute name="STRIPTRAILINGBLANKS" type="xs:string" use="required" />
+                                                                                </xs:complexType>
+                                                                            </xs:element>
+                                                                            <xs:element minOccurs="0" name="PARTITION">
+                                                                                <xs:complexType>
+                                                                                    <xs:attribute name="DESCRIPTION" type="xs:string" use="required" />
+                                                                                    <xs:attribute name="NAME" type="xs:string" use="required" />
+                                                                                </xs:complexType>
+                                                                            </xs:element>
+                                                                        </xs:sequence>
+                                                                        <xs:attribute name="ISREPARTITIONPOINT" type="xs:string" use="required" />
+                                                                        <xs:attribute name="PARTITIONTYPE" type="xs:string" use="optional" />
+                                                                        <xs:attribute name="PIPELINE" type="xs:unsignedByte" use="required" />
+                                                                        <xs:attribute name="SINSTANCENAME" type="xs:string" use="required" />
+                                                                        <xs:attribute name="STAGE" type="xs:unsignedByte" use="required" />
+                                                                        <xs:attribute name="TRANSFORMATIONNAME" type="xs:string" use="required" />
+                                                                        <xs:attribute name="TRANSFORMATIONTYPE" type="xs:string" use="required" />
+                                                                    </xs:complexType>
+                                                                </xs:element>
+                                                                <xs:element name="CONFIGREFERENCE">
+                                                                    <xs:complexType>
+                                                                        <xs:attribute name="REFOBJECTNAME" type="xs:string" use="required" />
+                                                                        <xs:attribute name="TYPE" type="xs:string" use="required" />
+                                                                    </xs:complexType>
+                                                                </xs:element>
+                                                                <xs:element maxOccurs="unbounded" name="SESSIONCOMPONENT">
+                                                                    <xs:complexType>
+                                                                        <xs:sequence>
+                                                                            <xs:element name="TASK">
+                                                                                <xs:complexType>
+                                                                                    <xs:sequence>
+                                                                                        <xs:element maxOccurs="unbounded" name="ATTRIBUTE">
+                                                                                            <xs:complexType>
+                                                                                                <xs:attribute name="NAME" type="xs:string" use="required" />
+                                                                                                <xs:attribute name="VALUE" type="xs:string" use="required" />
+                                                                                            </xs:complexType>
+                                                                                        </xs:element>
+                                                                                    </xs:sequence>
+                                                                                    <xs:attribute name="DESCRIPTION" type="xs:string" use="required" />
+                                                                                    <xs:attribute name="NAME" type="xs:string" use="required" />
+                                                                                    <xs:attribute name="REUSABLE" type="xs:string" use="required" />
+                                                                                    <xs:attribute name="TYPE" type="xs:string" use="required" />
+                                                                                    <xs:attribute name="VERSIONNUMBER" type="xs:unsignedByte" use="required" />
+                                                                                </xs:complexType>
+                                                                            </xs:element>
+                                                                            <xs:element minOccurs="0" maxOccurs="unbounded" name="VALUEPAIR">
+                                                                                <xs:complexType>
+                                                                                    <xs:attribute name="EXECORDER" type="xs:unsignedByte" use="required" />
+                                                                                    <xs:attribute name="NAME" type="xs:string" use="required" />
+                                                                                    <xs:attribute name="REVERSEASSIGNMENT" type="xs:string" use="required" />
+                                                                                    <xs:attribute name="VALUE" type="xs:string" use="required" />
+                                                                                </xs:complexType>
+                                                                            </xs:element>
+                                                                        </xs:sequence>
+                                                                        <xs:attribute name="REFOBJECTNAME" type="xs:string" use="required" />
+                                                                        <xs:attribute name="REUSABLE" type="xs:string" use="required" />
+                                                                        <xs:attribute name="TYPE" type="xs:string" use="required" />
+                                                                    </xs:complexType>
+                                                                </xs:element>
+                                                                <xs:element maxOccurs="unbounded" name="SESSIONEXTENSION">
+                                                                    <xs:complexType>
+                                                                        <xs:sequence minOccurs="0">
+                                                                            <xs:element name="CONNECTIONREFERENCE">
+                                                                                <xs:complexType>
+                                                                                    <xs:attribute name="CNXREFNAME" type="xs:string" use="required" />
+                                                                                    <xs:attribute name="CONNECTIONNAME" type="xs:string" use="required" />
+                                                                                    <xs:attribute name="CONNECTIONNUMBER" type="xs:unsignedByte" use="required" />
+                                                                                    <xs:attribute name="CONNECTIONSUBTYPE" type="xs:string" use="required" />
+                                                                                    <xs:attribute name="CONNECTIONTYPE" type="xs:string" use="required" />
+                                                                                    <xs:attribute name="VARIABLE" type="xs:string" use="required" />
+                                                                                </xs:complexType>
+                                                                            </xs:element>
+                                                                            <xs:element minOccurs="0" maxOccurs="unbounded" name="ATTRIBUTE">
+                                                                                <xs:complexType>
+                                                                                    <xs:attribute name="NAME" type="xs:string" use="required" />
+                                                                                    <xs:attribute name="VALUE" type="xs:string" use="required" />
+                                                                                </xs:complexType>
+                                                                            </xs:element>
+                                                                        </xs:sequence>
+                                                                        <xs:attribute name="NAME" type="xs:string" use="required" />
+                                                                        <xs:attribute name="SINSTANCENAME" type="xs:string" use="required" />
+                                                                        <xs:attribute name="SUBTYPE" type="xs:string" use="required" />
+                                                                        <xs:attribute name="TRANSFORMATIONTYPE" type="xs:string" use="required" />
+                                                                        <xs:attribute name="TYPE" type="xs:string" use="required" />
+                                                                        <xs:attribute name="DSQINSTNAME" type="xs:string" use="optional" />
+                                                                        <xs:attribute name="DSQINSTTYPE" type="xs:string" use="optional" />
+                                                                    </xs:complexType>
+                                                                </xs:element>
+                                                                <xs:element maxOccurs="unbounded" name="ATTRIBUTE">
+                                                                    <xs:complexType>
+                                                                        <xs:attribute name="NAME" type="xs:string" use="required" />
+                                                                        <xs:attribute name="VALUE" type="xs:string" use="required" />
+                                                                    </xs:complexType>
+                                                                </xs:element>
+                                                            </xs:sequence>
+                                                            <xs:attribute name="DESCRIPTION" type="xs:string" use="required" />
+                                                            <xs:attribute name="ISVALID" type="xs:string" use="required" />
+                                                            <xs:attribute name="MAPPINGNAME" type="xs:string" use="required" />
+                                                            <xs:attribute name="NAME" type="xs:string" use="required" />
+                                                            <xs:attribute name="REUSABLE" type="xs:string" use="required" />
+                                                            <xs:attribute name="SORTORDER" type="xs:string" use="required" />
+                                                            <xs:attribute name="VERSIONNUMBER" type="xs:unsignedByte" use="required" />
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                    <xs:element maxOccurs="unbounded" name="TASKINSTANCE">
+                                                        <xs:complexType>
+                                                            <xs:attribute name="DESCRIPTION" type="xs:string" use="required" />
+                                                            <xs:attribute name="FAIL_PARENT_IF_INSTANCE_DID_NOT_RUN" type="xs:string" use="optional" />
+                                                            <xs:attribute name="FAIL_PARENT_IF_INSTANCE_FAILS" type="xs:string" use="optional" />
+                                                            <xs:attribute name="ISENABLED" type="xs:string" use="required" />
+                                                            <xs:attribute name="NAME" type="xs:string" use="required" />
+                                                            <xs:attribute name="REUSABLE" type="xs:string" use="required" />
+                                                            <xs:attribute name="TASKNAME" type="xs:string" use="required" />
+                                                            <xs:attribute name="TASKTYPE" type="xs:string" use="required" />
+                                                            <xs:attribute name="TREAT_INPUTLINK_AS_AND" type="xs:string" use="optional" />
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                    <xs:element maxOccurs="unbounded" name="WORKFLOWLINK">
+                                                        <xs:complexType>
+                                                            <xs:attribute name="CONDITION" type="xs:string" use="required" />
+                                                            <xs:attribute name="FROMTASK" type="xs:string" use="required" />
+                                                            <xs:attribute name="TOTASK" type="xs:string" use="required" />
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                    <xs:element maxOccurs="unbounded" name="WORKFLOWVARIABLE">
+                                                        <xs:complexType>
+                                                            <xs:attribute name="DATATYPE" type="xs:string" use="required" />
+                                                            <xs:attribute name="DEFAULTVALUE" type="xs:string" use="required" />
+                                                            <xs:attribute name="DESCRIPTION" type="xs:string" use="required" />
+                                                            <xs:attribute name="ISNULL" type="xs:string" use="required" />
+                                                            <xs:attribute name="ISPERSISTENT" type="xs:string" use="required" />
+                                                            <xs:attribute name="NAME" type="xs:string" use="required" />
+                                                            <xs:attribute name="USERDEFINED" type="xs:string" use="required" />
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                    <xs:element maxOccurs="unbounded" name="ATTRIBUTE">
+                                                        <xs:complexType>
+                                                            <xs:attribute name="NAME" type="xs:string" use="required" />
+                                                            <xs:attribute name="VALUE" type="xs:string" use="required" />
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                </xs:sequence>
+                                                <xs:attribute name="DESCRIPTION" type="xs:string" use="required" />
+                                                <xs:attribute name="ISENABLED" type="xs:string" use="required" />
+                                                <xs:attribute name="ISRUNNABLESERVICE" type="xs:string" use="required" />
+                                                <xs:attribute name="ISSERVICE" type="xs:string" use="required" />
+                                                <xs:attribute name="ISVALID" type="xs:string" use="required" />
+                                                <xs:attribute name="NAME" type="xs:string" use="required" />
+                                                <xs:attribute name="REUSABLE_SCHEDULER" type="xs:string" use="required" />
+                                                <xs:attribute name="SCHEDULERNAME" type="xs:string" use="required" />
+                                                <xs:attribute name="SERVERNAME" type="xs:string" use="required" />
+                                                <xs:attribute name="SERVER_DOMAINNAME" type="xs:string" use="required" />
+                                                <xs:attribute name="SUSPEND_ON_ERROR" type="xs:string" use="required" />
+                                                <xs:attribute name="TASKS_MUST_RUN_ON_SERVER" type="xs:string" use="required" />
+                                                <xs:attribute name="VERSIONNUMBER" type="xs:unsignedByte" use="required" />
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                    <xs:attribute name="NAME" type="xs:string" use="required" />
+                                    <xs:attribute name="GROUP" type="xs:string" use="required" />
+                                    <xs:attribute name="OWNER" type="xs:string" use="required" />
+                                    <xs:attribute name="SHARED" type="xs:string" use="required" />
+                                    <xs:attribute name="DESCRIPTION" type="xs:string" use="required" />
+                                    <xs:attribute name="PERMISSIONS" type="xs:string" use="required" />
+                                    <xs:attribute name="UUID" type="xs:string" use="required" />
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="NAME" type="xs:string" use="required" />
+                        <xs:attribute name="VERSION" type="xs:unsignedByte" use="required" />
+                        <xs:attribute name="CODEPAGE" type="xs:string" use="required" />
+                        <xs:attribute name="DATABASETYPE" type="xs:string" use="required" />
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+            <xs:attribute name="CREATION_DATE" type="xs:string" use="required" />
+            <xs:attribute name="REPOSITORY_VERSION" type="xs:decimal" use="required" />
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

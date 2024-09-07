@@ -77,6 +77,11 @@ This script is used to retrieve and export workflow details from the Informatica
 
 This script is designed to export workflows from an on-premises Informatica PowerCenter repository. It connects to the repository using the provided credentials and lists all workflows in the specified folder. The details of each workflow are then exported and converted to JSON format.
 
+### Support for Legacy Informatica DataMart Files
+
+This project also supports the conversion of legacy Informatica DataMart files to SSIS packages. The provided scripts and utilities can be adapted to handle the specific requirements and formats of DataMart files, ensuring a smooth migration process. By leveraging the `InformaticaX_SSIS.ps1` script and the `SSISWrapper` utility, you can convert DataMart XML files to SSIS DTSX packages, validate them, and ensure they are ready for deployment.
+
+
 ### Example Workflow
 
 1. **Retrieve Metadata**: Use the Informatica Big Data Cloud API to retrieve metadata about the source and target systems.
