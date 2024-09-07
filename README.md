@@ -2,6 +2,10 @@
 
 This project provides tools for managing and validating SQL Server Integration Services (SSIS) packages. It includes scripts for converting PowerMart files to DTSX packages and validating DTSX files.
 
+## Special Note
+
+This project includes a unique command-line utility for managing and validating SSIS packages. As of now, it is likely the only DTSX command-line utility available on the Internet. This tool provides a comprehensive set of features for adding connections, tasks, precedence constraints, variables, and enabling logging within SSIS packages. It also supports the conversion of PowerMart files to DTSX packages and the validation of these packages. The utility is designed to streamline the process of working with SSIS packages, making it easier for developers and data professionals to manage their ETL workflows efficiently.
+
 ## Table of Contents
 
 - [Overview](#overview)
