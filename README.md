@@ -10,13 +10,23 @@ This project includes a unique command-line utility for managing and validating 
 
 - [Overview](#overview)
 - [SSISWrapper](#ssiswrapper)
-  - [Adding an OLEDB Connection](#adding-an-oledb-connection)
-  - [Adding an ODBC Connection](#adding-an-odbc-connection)
-  - [Adding an ADO Connection](#adding-an-ado-connection)
-  - [Adding an ADO.NET:SQL Connection](#adding-an-adonet-sql-connection)
-  - [Adding an ADO.NET:OLEDB Connection](#adding-an-adonet-oledb-connection)
-  - [Adding a Flat File Connection](#adding-a-flat-file-connection)
-  - [Adding a File Connection](#adding-a-file-connection)
+  - [Adding Connections](#adding-connections)
+    - [Adding an OLEDB Connection](#adding-an-oledb-connection)
+    - [Adding an ODBC Connection](#adding-an-odbc-connection)
+    - [Adding an ADO Connection](#adding-an-ado-connection)
+    - [Adding an ADO.NET:SQL Connection](#adding-an-adonet-sql-connection)
+    - [Adding an ADO.NET:OLEDB Connection](#adding-an-adonet-oledb-connection)
+    - [Adding a Flat File Connection](#adding-a-flat-file-connection)
+    - [Adding a File Connection](#adding-a-file-connection)
+  - [Adding Tasks](#adding-tasks)
+  - [Adding Precedence Constraints](#adding-precedence-constraints)
+  - [Adding Variables](#adding-variables)
+  - [Enabling Logging](#enabling-logging)
+  - [Adding Data Flow Tasks](#adding-data-flow-tasks)
+  - [Listing Data Flow Components](#listing-data-flow-components)
+  - [Adding Data Flow Components](#adding-data-flow-components)
+  - [Connecting Data Flow Components](#connecting-data-flow-components)
+  - [Selecting Input Columns](#selecting-input-columns)
 - [Scripts](#scripts)
   - [InformaticaX_SSIS.ps1](#informaticax_ssisps1)
   - [DTSXValidator.ps1](#dtsxvalidatorps1)
@@ -26,6 +36,29 @@ This project includes a unique command-line utility for managing and validating 
 - [Configuration](#configuration)
 - [Contributing](#contributing)
 - [License](#license)
+
+## Informatica Big Data Cloud API to SSIS Migration
+
+Yes, this project can be adapted to work with the Informatica Big Data Cloud API for SSIS migration. Here is how it can be done:
+
+1. **API Integration**: Modify the `InformaticaX_SSIS.ps1` script to include API calls to the Informatica Big Data Cloud. This can be done using PowerShell's `Invoke-RestMethod` or `Invoke-WebRequest` cmdlets to interact with the API and retrieve the necessary data.
+
+2. **Data Extraction**: Extract the required metadata and data from the Informatica Big Data Cloud using the API. This includes information about the source and target systems, mappings, transformations, and other relevant details.
+
+3. **Data Transformation**: Use the extracted data to create the corresponding SSIS components. This involves mapping the Informatica components to their SSIS equivalents. The `SSISWrapper` utility can be extended to support additional components and transformations as needed.
+
+4. **Package Generation**: Generate the SSIS packages using the `SSISWrapper` utility. The utility can be invoked from the PowerShell script with the appropriate parameters to create the DTSX packages based on the extracted data.
+
+5. **Validation**: Validate the generated SSIS packages using the `DTSXValidator.ps1` script. This ensures that the packages are correctly configured and can be executed without errors.
+
+### Example Workflow
+
+1. **Retrieve Metadata**: Use the Informatica Big Data Cloud API to retrieve metadata about the source and target systems.
+2. **Map Components**: Map the Informatica components to their SSIS equivalents.
+3. **Generate Packages**: Use the `SSISWrapper` utility to generate the SSIS packages.
+4. **Validate Packages**: Validate the generated packages using the `DTSXValidator.ps1` script.
+
+By following these steps, you can effectively migrate from Informatica Big Data Cloud to SSIS, leveraging the tools and scripts provided in this project.
 
 ## Overview
 
