@@ -1,0 +1,32 @@
+# Instructions to Export Mappings from Metadata Manager or Other Admin Tools
+
+## Step 1: Access Metadata Manager
+1. Open the Informatica Administrator tool.
+2. Navigate to the Metadata Manager service.
+3. Log in with your administrator credentials.
+
+## Step 2: Select the Mappings to Export
+1. In the Metadata Manager, go to the 'Mappings' section.
+2. Browse or search for the mappings you want to export.
+3. Select the desired mappings by checking the corresponding checkboxes.
+
+## Step 3: Export the Mappings
+1. Click on the 'Export' button or option in the Metadata Manager.
+2. Choose the export format (e.g., XML, JSON) and specify the export location.
+3. Confirm the export operation and wait for the process to complete.
+
+## Step 4: Verify the Exported Files
+1. Navigate to the export location specified in the previous step.
+2. Verify that the exported files are present and contain the expected mapping details.
+
+## Step 5: Use Admin Tools for Workflow Details
+1. Open the Informatica Admin Console or other relevant admin tools.
+2. Navigate to the 'Workflows' section.
+3. Select the workflows you want to export details for.
+4. Use the export functionality provided by the admin tool to export the workflow details.
+5. Save the exported workflow details to a specified location.
+
+## Step 6: Review and Utilize Exported Data
+1. Open the exported mapping and workflow files.
+2. Review the contents to ensure all necessary details are included.
+3. Utilize the exported data for documentation, migration, or other purposes as needed.

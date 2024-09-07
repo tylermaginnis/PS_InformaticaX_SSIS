@@ -6,36 +6,44 @@ This project provides tools for managing and validating SQL Server Integration S
 
 This project includes a unique command-line utility for managing and validating SSIS packages. As of now, it is likely the only DTSX command-line utility available on the Internet. This tool provides a comprehensive set of features for adding connections, tasks, precedence constraints, variables, and enabling logging within SSIS packages. It also supports the conversion of PowerMart files to DTSX packages and the validation of these packages. The utility is designed to streamline the process of working with SSIS packages, making it easier for developers and data professionals to manage their ETL workflows efficiently.
 
-## Table of Contents
+# Table of Contents
 
-- [Overview](#overview)
-- [SSISWrapper](#ssiswrapper)
-  - [Adding Connections](#adding-connections)
-    - [Adding an OLEDB Connection](#adding-an-oledb-connection)
-    - [Adding an ODBC Connection](#adding-an-odbc-connection)
-    - [Adding an ADO Connection](#adding-an-ado-connection)
-    - [Adding an ADO.NET:SQL Connection](#adding-an-adonet-sql-connection)
-    - [Adding an ADO.NET:OLEDB Connection](#adding-an-adonet-oledb-connection)
-    - [Adding a Flat File Connection](#adding-a-flat-file-connection)
-    - [Adding a File Connection](#adding-a-file-connection)
-  - [Adding Tasks](#adding-tasks)
-  - [Adding Precedence Constraints](#adding-precedence-constraints)
-  - [Adding Variables](#adding-variables)
-  - [Enabling Logging](#enabling-logging)
-  - [Adding Data Flow Tasks](#adding-data-flow-tasks)
-  - [Listing Data Flow Components](#listing-data-flow-components)
-  - [Adding Data Flow Components](#adding-data-flow-components)
-  - [Connecting Data Flow Components](#connecting-data-flow-components)
-  - [Selecting Input Columns](#selecting-input-columns)
-- [Scripts](#scripts)
-  - [InformaticaX_SSIS.ps1](#informaticax_ssisps1)
-  - [DTSXValidator.ps1](#dtsxvalidatorps1)
-- [Usage](#usage)
-  - [Converting PowerMart Files](#converting-powermart-files)
-  - [Validating DTSX Files](#validating-dtsx-files)
-- [Configuration](#configuration)
-- [Contributing](#contributing)
-- [License](#license)
+- [SSIS Package Constructor Commandline, PowerShell Package Management and Validation](#ssis-package-constructor-commandline-powershell-package-management-and-validation)
+  - [Special Note](#special-note)
+  - [Informatica Big Data Cloud API to SSIS Migration](#informatica-big-data-cloud-api-to-ssis-migration)
+  - [Scripts](#scripts)
+    - [PS_InformaticaX_ExportMapping.ps1](#ps_informaticax_exportmappingps1)
+    - [PS_InformaticaX_OnPrem_ExportMapping.ps1](#ps_informaticax_onprem_exportmappingps1)
+    - [PS_InformaticaX_Workflows.ps1](#ps_informaticax_workflowsps1)
+    - [PS_InformaticaX_OnPrem_Workflows.ps1](#ps_informaticax_onprem_workflowsps1)
+    - [Example Workflow](#example-workflow)
+  - [Overview](#overview)
+  - [SSISWrapper](#ssiswrapper)
+    - [Adding Connections](#adding-connections)
+      - [Adding an OLEDB Connection](#adding-an-oledb-connection)
+      - [Adding an ODBC Connection](#adding-an-odbc-connection)
+      - [Adding an ADO Connection](#adding-an-ado-connection)
+      - [Adding an ADO.NET:SQL Connection](#adding-an-adonet-sql-connection)
+      - [Adding an ADO.NET:OLEDB Connection](#adding-an-adonet-oledb-connection)
+      - [Adding a Flat File Connection](#adding-a-flat-file-connection)
+      - [Adding a File Connection](#adding-a-file-connection)
+    - [Adding Tasks](#adding-tasks)
+    - [Adding Precedence Constraints](#adding-precedence-constraints)
+    - [Adding Variables](#adding-variables)
+    - [Enabling Logging](#enabling-logging)
+    - [Adding Data Flow Tasks](#adding-data-flow-tasks)
+    - [Listing Data Flow Components](#listing-data-flow-components)
+    - [Adding Data Flow Components](#adding-data-flow-components)
+    - [Connecting Data Flow Components](#connecting-data-flow-components)
+    - [Selecting Input Columns](#selecting-input-columns)
+  - [Scripts](#scripts-1)
+    - [InformaticaX_SSIS.ps1](#informaticax_ssisps1)
+    - [DTSXValidator.ps1](#dtsxvalidatorps1)
+  - [Usage](#usage)
+    - [Converting PowerMart Files](#converting-powermart-files)
+    - [Validating DTSX Files](#validating-dtsx-files)
+  - [Configuration](#configuration)
+  - [Contributing](#contributing)
 
 ## Informatica Big Data Cloud API to SSIS Migration
 
@@ -50,6 +58,24 @@ Yes, this project can be adapted to work with the Informatica Big Data Cloud API
 4. **Package Generation**: Generate the SSIS packages using the `SSISWrapper` utility. The utility can be invoked from the PowerShell script with the appropriate parameters to create the DTSX packages based on the extracted data.
 
 5. **Validation**: Validate the generated SSIS packages using the `DTSXValidator.ps1` script. This ensures that the packages are correctly configured and can be executed without errors.
+
+## Scripts
+
+### PS_InformaticaX_ExportMapping.ps1
+
+This script is used to export mappings from the Informatica Intelligent Cloud Services (IICS). It connects to the IICS server using the provided session ID and retrieves the mappings using the API endpoint. The mappings are then converted to JSON format for further processing or storage.
+
+### PS_InformaticaX_OnPrem_ExportMapping.ps1
+
+This script is designed to export mappings from an on-premises Informatica PowerCenter repository. It connects to the repository using the provided credentials and lists all mappings in the specified folder. The details of each mapping are then exported and converted to JSON format.
+
+### PS_InformaticaX_Workflows.ps1
+
+This script is used to retrieve and export workflow details from the Informatica Intelligent Cloud Services (IICS). It connects to the IICS server using the provided session ID and retrieves the workflows using the API endpoint. For each workflow, it retrieves the detailed information and converts it to JSON format for further processing or storage.
+
+### PS_InformaticaX_OnPrem_Workflows.ps1
+
+This script is designed to export workflows from an on-premises Informatica PowerCenter repository. It connects to the repository using the provided credentials and lists all workflows in the specified folder. The details of each workflow are then exported and converted to JSON format.
 
 ### Example Workflow
 
